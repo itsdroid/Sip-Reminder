@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Water Reminder - Advanced</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
 </head>
+
 <body>
-    
+    <div class="animated-bg"></div>
+
+    <div class="main-container">
+        <div class="header">
+            <h1 class="title"> </h1>
+            <div class="subtitle">Advanced Hydration System</div>
+        </div>
+
+        <div class="content">
+            <!-- Configuration Section (moved to top) -->
+            <div class="glass-card compact">
+                <div class="section-header">
+                    <div class="section-icon config">⚙️</div>
+                    <h3 class="section-title">Configuration</h3>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Reminder Interval</label>
+                    <div class="advanced-select">
+                        <select id="interval" class="select-input">
+                            <option value="5">5 Minutes</option>
+                            <option value="10">10 Minutes</option>
+                            <option value="15">15 Minutes</option>
+                            <option value="20">20 Minutes</option>
+                            <option value="30" selected>30 Minutes</option>
+                            <option value="45">45 Minutes</option>
+                            <option value="60">60 Minutes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="date-time-div" class="date-time-div"> </div>
+
+            <div class="controls">
+                <div class="button-row">
+                    <button id="startBtn" class="advanced-btn btn-primary">
+                        <span class="btn-text">Initialize System</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="status" class="status-panel status-active glass-card" style="transform: translateY(-2px);">
+                <div class="status-indicator"></div>
+                <div class="status-text">NEXT: 13:23</div>
+            </div>
+
+            <div class="glass-card compact">
+                <div class="section-header">
+                    <h3 class="section-title"> About you </h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label"> Weight </label>
+                    <input type="text" id="addSiteInput" class="add-site-input"
+                        placeholder="Enter your Weight in kg">
+                    <label class="form-label"> Water drank today </label>
+                    <input type="text" id="addSiteInput" class="add-site-input"
+                        placeholder="Enter Water your drank in ml">
+                    <button id="Count-button" class="Count-button"> Count </button>
+                </div>
+            </div>
+
+        </div>
+        <script src="content.js"></script>
 </body>
+
 </html>
