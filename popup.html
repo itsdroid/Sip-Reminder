@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Reminder - Advanced</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -16,12 +13,11 @@
 
     <div class="main-container">
         <div class="header">
-            <h1 class="title"> </h1>
+            <h1 class="title"> SipReminder </h1>
             <div class="subtitle">Advanced Hydration System</div>
         </div>
 
         <div class="content">
-            <!-- Configuration Section (moved to top) -->
             <div class="glass-card compact">
                 <div class="section-header">
                     <div class="section-icon config">⚙️</div>
@@ -31,7 +27,8 @@
                 <div class="form-group">
                     <label class="form-label">Reminder Interval</label>
                     <div class="advanced-select">
-                        <select id="interval" class="select-input">
+                        <select id="interval" class="select-input">\
+                            <option value="0.5">0.5 Minutes</option>
                             <option value="5">5 Minutes</option>
                             <option value="10">10 Minutes</option>
                             <option value="15">15 Minutes</option>
@@ -44,39 +41,53 @@
                 </div>
             </div>
 
-
             <div id="date-time-div" class="date-time-div"> </div>
-
-            <div class="controls">
-                <div class="button-row">
-                    <button id="startBtn" class="advanced-btn btn-primary">
-                        <span class="btn-text">Initialize System</span>
-                    </button>
-                </div>
-            </div>
 
             <div id="status" class="status-panel status-active glass-card" style="transform: translateY(-2px);">
                 <div class="status-indicator"></div>
                 <div class="status-text">NEXT: 13:23</div>
             </div>
 
+            <div class="info">
+                <p id="real-time"></p>
+                <div class="progress">
+                    <span>🚫</span>
+                    <div class="bar-wrapper">
+                        <div class="bar">
+                            <div class="progress-bar"></div>
+                            <p id="track-percent"></p>
+                        </div>
+                    </div>
+                    <span>💧</span>
+                </div>
+
+                <p id="reminder"></p>
+            </div>
+
+
             <div class="glass-card compact">
                 <div class="section-header">
-                    <h3 class="section-title"> About you </h3>
+                    <h3 class="section-title">About You</h3>
                 </div>
                 <div class="form-group">
-                    <label class="form-label"> Weight </label>
-                    <input type="text" id="addSiteInput" class="add-site-input"
-                        placeholder="Enter your Weight in kg">
-                    <label class="form-label"> Water drank today </label>
-                    <input type="text" id="addSiteInput" class="add-site-input"
-                        placeholder="Enter Water your drank in ml">
-                    <button id="Count-button" class="Count-button"> Count </button>
+                    <label class="form-label">Weight (kg)</label>
+                    <input type="number" id="weightInput" class="add-site-input" placeholder="e.g. 70">
+
+                    <label class="form-label">Add Water (ml)</label>
+                    <input type="number" id="drinkInput" class="add-site-input" placeholder="e.g. 250">
+
+                    <button id="Count-button" class="Count-button">Update Intake</button>
+                </div>
+
+                <div id="WateReqStatus" class="WateReqStatus">
+                    Enter weight to calculate daily goal.
                 </div>
             </div>
 
         </div>
-        <script src="content.js"></script>
+
+    </div>
+    <script src="content.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,10 @@
     "version": "1.0",
     "name": "Sip Reminder",
     "description": "Gentle water reminders that help you sip regularly and stay refreshed",
-    "persmission": ["storage", "activeTab"],
+    "permissions": ["notifications", "storage", "alarms"],
+    "background": {
+    "service_worker": "background.js"
+    },
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "css": ["style.css"],
