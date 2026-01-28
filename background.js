@@ -1,10 +1,19 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.type === "SHOW_NOTIFICATION") {
+chrome.alarms.onAlarm.addListener((alarm) => {
+    if (alarm.name === "hydrationAlarm") {
         chrome.notifications.create({
             type: "basic",
-            title: request.title,
-            message: request.message,
+            iconUrl: "icons/icon128.png", 
+            title: "Hydration Reminder",
+            message: "💧 Time to drink water!",
             priority: 2
+        });
+    }
+});
+
+chrome.runtime.onMessage.addListener((request) => {
+    if (request.type === "SET_ALARM") {
+        chrome.alarms.create("hydrationAlarm", {
+            periodInMinutes: request.minutes
         });
     }
 });
